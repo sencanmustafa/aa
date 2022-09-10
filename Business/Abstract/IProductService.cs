@@ -6,6 +6,7 @@ namespace Business.Abstract
     public interface IProductService
     {
         List<Product> GetALl();
+        
     }
 }
 
