@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Entities.Concrete;
 
-namespace DataAccess.Abstract
+
+namespace Core.DataAccess
 {
     public interface IEntityRepository<T>
     {

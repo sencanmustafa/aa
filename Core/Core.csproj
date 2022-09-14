@@ -4,14 +4,29 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>d5a470f4-1a6a-450f-ae44-45639deba052</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="DataAccess\" />
+    <None Remove="Entities\" />
+    <None Remove="Microsoft.Extensions.Configuration.UserSecrets" />
+    <None Remove="DataAccess\EntityFramework\" />
+    <None Remove="Utilities\" />
+    <None Remove="Utilities\Results\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+    <Folder Include="Entities\" />
+    <Folder Include="DataAccess\EntityFramework\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Utilities\Results\" />
   </ItemGroup>
 </Project>

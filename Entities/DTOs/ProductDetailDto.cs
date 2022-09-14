@@ -1,17 +1,13 @@
 ﻿using System;
 using Core.Entities;
 
-
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-    public class Product:IEntity
+    public class ProductDetailDto:IDto
     {
         public int ProductId { get; set; }
-        public int CategoryId { get; set; }
         public string? ProductName { get; set; }
+        public string? CategoryName { get; set; }
         public int UnitsInStock { get; set; }
-        public int UnitPrice { get; set; }
-
     }
 }
-
