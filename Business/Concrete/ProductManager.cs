@@ -29,23 +29,29 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetALl() 
         {
-            return new DataResult<List<Product>>(_productDal.GetALl(), true, "product returned");
+            if (DateTime.Now.Hour==23)
+            {
+                return new ErrorDataResult<List<Product>>(Messages.Maintenance);
+            }
+            return new SuccessDataResult<List<Product>>(_productDal.GetALl(), Messages.ProductListed);
         }
 
         public IDataResult<List<Product>> GetAllByCategory(int id)
         {
-            return new DataResult<List<Product>>(_productDal.GetALl(p => p.CategoryId == id),true,"Product");
+            return new SuccessDataResult<List<Product>>(_productDal.GetALl(p => p.CategoryId == id),Messages.ProductListed);
         }
 
-        public List<Product> GetByUnitPrice(int min, int max)
+        public IDataResult<List<Product>> GetByUnitPrice(int min, int max)
         {
-            return _productDal.GetALl(p => p.UnitPrice >= min && p.UnitPrice <= max);
+            return new SuccessDataResult<List<Product>>(_productDal.GetALl(p => p.UnitPrice <= max && p.UnitPrice >= min), Messages.ProductListed);
         }
 
-        public List<ProductDetailDto> GetProductDetails()
+        public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            return _productDal.GetProductDetails();
+            return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
         }
+
+        
     }
 }
 
