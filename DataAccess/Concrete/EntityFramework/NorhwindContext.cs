@@ -7,7 +7,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=sql.athena.domainhizmetleri.com; Database=mustaf11_dotnet; Integrated Security = False; User=mustaf11_dotnet; Password=Mustiler463!");
+            optionsBuilder.UseSqlServer(@"Server=sql.athena.domainhizmetleri.com; Database=mustaf11_dotnet; Integrated Security = False;);
         }
         public DbSet<Product> Products { get; set; }
 
